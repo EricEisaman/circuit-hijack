@@ -1,0 +1,14 @@
+#!/bin/sh
+# Reject commits not authored as EricEisaman on this repository.
+allowed_name='EricEisaman'
+allowed_email='EricEisaman@users.noreply.github.com'
+
+author_name=$(git config --get user.name)
+author_email=$(git config --get user.email)
+
+if [ "$author_name" != "$allowed_name" ] || [ "$author_email" != "$allowed_email" ]; then
+  echo "pre-commit: author must be $allowed_name <$allowed_email>" >&2
+  echo "pre-commit: got $author_name <$author_email>" >&2
+  echo "pre-commit: run: git config user.name \"$allowed_name\" && git config user.email \"$allowed_email\"" >&2
+  exit 1
+fi

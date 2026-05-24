@@ -1,0 +1,25 @@
+node_modules
+dist
+*.tsbuildinfo
+
+# Local env overrides (e.g. VITE_MULTIPLAYER_HOST)
+.env.local
+.env.*.local
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Local-only contributor policy check
+scripts/check-contributors.mjs
+
+# Playwright MCP artifacts
+.playwright-mcp/
+
+# Debug/test screenshots
+*.png
+!src/client/public/branding/images/Babylon_logo.png
+!src/client/public/branding/images/logo.png
+!src/client/public/branding/images/circuit_hijack_logo.png
+!src/client/public/branding/images/Circuit_Hijack_Banner.png
+!resources/circuit_hijack_logo.png
